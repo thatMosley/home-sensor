@@ -23,8 +23,8 @@ logger=logging.getLogger(__name__)
 # Function called to read allowed sensor codes from MySQL db into config file
 def readSensors():
     
-  db = mdb.connect('db_server', \
-                   'db_user', \
+  db = mdb.connect('db_host', \ # replace with your real database details
+                   'db_user', \ # the sql user needs to have read permissions
                    'db_password', \
                    'db_name');
 
@@ -43,10 +43,10 @@ def readSensors():
 # Function called when received_value is true and matches an allowed sensor value
 def storeFunction(channel):
         
-  con = mdb.connect('localhost', \
-                    'sensorwriter', \
-                    'EWE-5h9-eSM-WTS', \
-                    'homesensor');
+  con = mdb.connect('db_host', \ # replace with your real database details
+                    'db_user', \ # this sql user needs to have write permissions
+                    'db_password', \
+                    'db_name');
             
   try:
     cur = con.cursor()
