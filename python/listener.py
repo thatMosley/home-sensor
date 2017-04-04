@@ -23,10 +23,10 @@ logger=logging.getLogger(__name__)
 # Function called to read allowed sensor codes from MySQL db into config file
 def readSensors():
     
-  db = mdb.connect('localhost', \
-                   'sensorreader', \
-                   'MwhCmQVatUFyEzF5', \
-                   'homesensor');
+  db = mdb.connect('db_server', \
+                   'db_user', \
+                   'db_password', \
+                   'db_name');
 
   try:
     cur = db.cursor()
