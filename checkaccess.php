@@ -25,7 +25,7 @@ $login_access=$row['access'];
 
 if($access !== 'admin')
 {
-mysqli_close($db); // Closing  datbase connection
+mysqli_close($db); // Closing  database connection
 session_unset();
 session_destroy();
 header("Location: ../index.php");
