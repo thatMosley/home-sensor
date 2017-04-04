@@ -22,9 +22,11 @@ logger=logging.getLogger(__name__)
 
 # Function called to read allowed sensor codes from MySQL db into config file
 def readSensors():
-    
-  db = mdb.connect('db_host', \ # replace with your real database details
-                   'db_user', \ # the sql user needs to have read permissions
+
+# replace these details with your database and a user with read permissions
+
+  db = mdb.connect('db_host', \
+                   'db_user', \
                    'db_password', \
                    'db_name');
 
@@ -42,9 +44,11 @@ def readSensors():
 
 # Function called when received_value is true and matches an allowed sensor value
 def storeFunction(channel):
-        
-  con = mdb.connect('db_host', \ # replace with your real database details
-                    'db_user', \ # this sql user needs to have write permissions
+
+# replace these details with your database and a user with write permissions
+
+  con = mdb.connect('db_host', \
+                    'db_user', \
                     'db_password', \
                     'db_name');
             
